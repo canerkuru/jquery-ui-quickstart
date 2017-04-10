@@ -1,0 +1,48 @@
+<!DOCTYPE html> 
+<head> 
+   <link href="../code/jquery-ui-themes-1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet"> 
+   <script src="../code/jquery-3.2.0.min.js"></script> 
+   <script src="../code/jquery-ui-1.12.1/jquery-ui.js"></script>  
+      <style> 
+         .ui-menu { 
+            width: 200px; 
+         } 
+      </style> 
+      <!-- Javascript --> 
+      <script> 
+         $(function() { 
+         $( "#menu-5" ).menu({ 
+            create: function( event, ui ) { 
+               var result = $( "#result" ); 
+               result.append( "Create event<br>" ); 
+            }, 
+            blur: function( event, ui ) { 
+               var result = $( "#result" ); 
+               result.append( "Blur event<br>" ); 
+            }, 
+            focus: function( event, ui ) { 
+               var result = $( "#result" ); 
+               result.append( "focus event<br>" ); 
+            } 
+         }); 
+       }); 
+      </script> 
+   </head> 
+   <body> 
+      <!-- HTML -->  
+      <ul id="menu-5"> 
+         <li><a href="#">Spring</a></li> 
+         <li><a href="#">Hibernate</a></li> 
+         <li><a href="#">JSF</a></li> 
+         <li><a href="#">HTML5</a></li> 
+         <li><a href="#">Java</a> 
+            <ul> 
+               <li><a href="#">Java IO</a></li> 
+               <li><a href="#">Swing</a></li> 
+               <li><a href="#">Jaspr Reports</a></li> 
+            </ul> 
+         </li> 
+      </ul> 
+      <span id="result"></span> 
+   </body> 
+</html>

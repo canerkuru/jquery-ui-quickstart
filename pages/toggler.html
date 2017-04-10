@@ -1,0 +1,42 @@
+<!DOCTYPE html> 
+<head> 
+   <link href="../code/jquery-ui-themes-1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet"> 
+   <script src="../code/jquery-3.2.0.min.js"></script> 
+   <script src="../code/jquery-ui-1.12.1/jquery-ui.js"></script> 
+      <style> 
+         .toggler { width: 500px; height: 200px; } 
+            #button { padding: .5em 1em; text-decoration: none; } 
+            #effect { width: 240px; height: 135px; padding: 0.4em; position: relative; } 
+            #effect h3 { margin: 0; padding: 0.4em; text-align: center; } 
+      </style> 
+      <script> 
+         $(function() { 
+            function runEffect() { 
+               $( "#effect" ).hide( "blind", {times: 10, distance: 100}, 1000, callback ); 
+            }; 
+            // callback function to bring a hidden box back 
+            function callback() { 
+               setTimeout(function() { 
+                  $( "#effect" ).removeAttr( "style" ).hide().fadeIn(); 
+               }, 1000 ); 
+            }; 
+            $( "#button" ).click(function() { 
+               runEffect(); 
+               return false; 
+            }); 
+         }); 
+      </script> 
+   </head> 
+   <body> 
+      <div class="toggler"> 
+      <div id="effect" class="ui-widget-content ui-corner-all"> 
+         <h3 class="ui-widget-header ui-corner-all">Hide</h3> 
+         <p> 
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. 
+         </p> 
+      </div> 
+      </div> 
+ 
+      <a href="#" id="button" class="ui-state-default ui-corner-all">Blind Effect Hide</a> 
+   </body> 
+</html>

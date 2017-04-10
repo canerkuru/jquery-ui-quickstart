@@ -1,0 +1,47 @@
+<!DOCTYPE html> 
+<head> 
+   <link href="../code/jquery-ui-themes-1.12.1/themes/ui-lightness/jquery-ui.css" rel="stylesheet"> 
+   <script src="../code/jquery-3.2.0.min.js"></script> 
+   <script src="../code/jquery-ui-1.12.1/jquery-ui.js"></script>  
+      <style> 
+         body { 
+            margin-top: 100px; 
+         } 
+ 
+         .ui-tooltip-content::after, .ui-tooltip-content::before { 
+            content: ""; 
+            position: absolute; 
+            border-style: solid; 
+            display: block; 
+            left: 90px; 
+         } 
+         .ui-tooltip-content::before { 
+            bottom: -10px; 
+            border-color: #AAA transparent; 
+            border-width: 10px 10px 0; 
+         } 
+         .ui-tooltip-content::after { 
+            bottom: -7px; 
+            border-color: white transparent; 
+            border-width: 10px 10px 0; 
+         } 
+      </style> 
+      <!-- Javascript --> 
+      <script> 
+         $(function() { 
+            $( "#tooltip-7" ).tooltip({ 
+               position: { 
+                  my: "center bottom", 
+                  at: "center top-10", 
+                  collision: "none" 
+               } 
+            }); 
+         }); 
+      </script> 
+   </head> 
+   <body> 
+      <!-- HTML -->  
+      <label for="name">Enter Date of Birth:</label> 
+      <input id="tooltip-7" title="Please use MM.DD.YY format."> 
+   </body> 
+</html>
